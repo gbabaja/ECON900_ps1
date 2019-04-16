@@ -13,12 +13,12 @@ driver = webdriver.Chrome(cdriver) #need driver for selenium to work.  Default i
 
 for i in range(1062):
 	driver.get("https://boardgamegeek.com/browse/boardgame/page/" +str(i+1)) #launching the URL
-	time.sleep(50) #give the page time to load (otherwise prices do not load properly)
+	time.sleep(60) #give the page time to load (otherwise prices do not load properly)
 	page = driver.page_source #get the html
 	file_ = open("html_files/boardgamegeek_page_no_" + str(i+1)+".html", "w") #save the html files in the folder
 	file_.write(page)
 	file_.close()
-	time.sleep(10)
+	time.sleep(60)
 
 driver.close()
 
