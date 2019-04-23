@@ -18,6 +18,8 @@ The goal of this part of the exercise is to collect data on name, ratings, voter
 		The first step of scraping data will require using Selenium because data on prices are added to the page via JavaScript.  Use file named requesthtml_gb.py for this step.  You will need to install Selenium and an appropriate webdriver before starting the exercise. You will also need to import selenium webdriver, keys, os, and time.
 
 		We will need to create a directory (i.e. a folder) for the html files that will be saved. Next, a loop requesting html of each page is created. Note, it is essential to allow some time for the page to fully load (in thise examle time sleep is 60 seconds) and allow some time before navigating to the next page (I chose to put 60 seconds once again).
+
+		The final outcome of this step should be 1062 html files of pages from www.boardgamegeek.com saved in the html_files folder in the selected directory.
 	
 	1.B Parsing HTML files
 		The second step of webscraping will use parsehtml_gb.py file.  You will need to install BeautifulSoup and Pandas for this step and import all appropriate modules. 
@@ -27,7 +29,8 @@ The goal of this part of the exercise is to collect data on name, ratings, voter
 		The codes for parsing consists of loops.  The first loop is for navigating into desired file. Moreover, because desired information is presented in the table format, we will also determine number of rows in the given html in the same loop. Next loop (i.e. the loop within the first one) allows us to navigate to the exact piece of information that we need in the given row.  Finally, within the row we will try to extract the information. This step could be tricky since some strings will not have any information which may cause the program to erorr out. To avoid "nonetype" related errors, we will put conditions in place: (1) the first condition lets the program to keep running even if it encounters emty strings (in this case a "missed" data point will be recorded in the dataframe), and (2) the second condtion will record the information when it is available in the html.
 
 		Finally, extracted information will be appended to dataframe using pandas and eventually saved into a csv file.
-
+		The final outcome of this step should be a boardgamegeek_dataset.csv (a csv file) which will be located in the parsed_files folder in the selected directory.
+		
 
 (2) Machine Learning Exercise
 	Machine learning exercise part of the project will refer to the file named machine_learning.py.  You need to install all indicated packages for this file to work.  Specifically, pandas to be ale to work with dataframe, seaborn and matplotlib for plots/graphs, as well as SVC, svm, confustion matrix, classification report, Standard Scaler, train test split, Kmeans, Gaussian Mixture, and metrics from the Scikit-learn software machine learning library.
